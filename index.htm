@@ -1,33 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    -->
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!-- stylesheet included, style.css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <script src='script.js'></script>
+
     <title>Password Generator</title>
-    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <div class="wrapper">
-        <header>
-            <h1>Password Generator</h1>
-        </header>
-        <div class="card">
-            <div class="card-header">
-                <h2>Generate a Password</h2>
-            </div>
-            <div class="card-body">
-                <textarea readonly id="password" placeholder="Your Secure Password"
-                    aria-label="Generated Password"></textarea>
-            </div>
-            <div class="card-footer">
-                <button id="generate" class="btn">Generate Password</button>
-            </div>
+    <div class="container">
+        <!-- Content here -->
+        <h1 style="text-align: center;">Password Generator</h1>
+
+        <div class="container_1">
+            <h2 style="text-align: center;">Generate A Password</h1>
+
+                <p id="displayPass" style="border: 1px solid black; align-items: center;">password</p>
+                <button type="button" onClick="passGenerator()">Generate</button>
+
         </div>
+
     </div>
-    <script src="script.js"></script>
+    <!-- This is footer -->
+    <!-- <footer id="sticky-footer1" class="py-4 bg-dark text-white-50">
+        <div class="container text-center">
+            <small>Love you All</small>
+        </div>
+    </footer> -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

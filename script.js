@@ -1,163 +1,64 @@
-// Assignment Code
-
-var generateBtn = document.querySelector("#generate");
 
 
+function passGenerator() {
+    // Alert 1
+    // created a variable to hold the length
+    var length = prompt("Select the length of the passward: (between 8 to 128)");
+    //converted string input to integer
+    var passLength = parseInt(length);
+    console.log(parseInt(passLength));
 
-function getRandomInt(max) {
+    // created an empty variable to generate password from
+    let value = "";
 
-    max = Math.floor(max);
+    // Alert 2
+    // created a boolean variable for user choice if he wants to include upper case
+    var upCase = confirm("Include UpperCase? ");
+    // if true, added all capital letter into value
+    if (upCase == true) {
+        value = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    }
+    console.log(value);
 
-    return Math.floor(Math.random() * max); //The maximum is exclusive and the minimum is inclusive
+    //Alert 3
+    // created a boolean variable for user choice if he wants to include lower case
+    var lowCase = confirm("Include LowerCase? ");
+    // if true, concate all small letter into value
+    if (lowCase == true) {
+        value = value.concat("abcdefghijklmnopqrstuvwxyz");
+    }
+    console.log(value);
 
+    // Alert 4
+    //created a boolean variable for user choice if he wants to inclue number
+    var num = confirm("Include Numeric? ");
+    // if true, concate all the number with value
+    if (num == true) {
+        value = value.concat("0123456789");
+    }
+    console.log(value);
+
+    // Alert 5
+    // created a boolean variable for user choice if he wants to include special charcter into value
+    var char = confirm("Include Special Character? ");
+    // if true, concate all the special charcter with value
+    if (lowCase == true) {
+        value = value.concat("!@#$%^&*()_+");
+    }
+    console.log(value);
+
+    // empty variable for password
+    let password = "";
+
+    // loop length is password length from alert 1
+    for (var i = 1; i <= passLength; i++) {
+
+        // generated random integer value between 0 to length of the value
+        let randNumb = Math.floor(Math.random() * (value.length) - 1);
+        password = password + value.charAt(randNumb);
+        //console.log(password);
+    }
+
+    console.log(password);
+    document.getElementById('displayPass').innerHTML = password;
 }
-
-
-
-function generatePassword() {
-
-    let lengthPrompt;
-
-    let length;
-
-
-
-    do {
-
-        lengthPrompt = prompt('what length do you want the password to be?');
-
-        length = parseInt(lengthPrompt, 10);
-
-    } while (length !== NaN && length <= 8 && length >= 128);
-
-
-
-    /**
-
-     * This section will continue to prompt the user for
-
-     * character sets until they respond yes to at least
-
-     * one of them
-
-     */
-
-    do {
-
-        let lower = prompt('do you need lower characters?');
-
-        lower = lower.toLowerCase();
-
-
-
-        let upper = prompt('do you need upper characters?');
-
-        upper = upper.toLowerCase();
-
-
-
-        let numeric = prompt('do you need numeric?');
-
-        numeric = numeric.toLowerCase();
-
-
-
-        let special = prompt('do you need special');
-
-        special = special.toLowerCase();
-
-    } while ( /* all answers are no */);
-
-
-
-    /**
-
-     * At this moment, we know the user responded
-
-     * yes to a question so we can begin generating the password
-
-     */
-
-    let lowerDict = 'abcd';
-
-    let upperDict = 'ABD';
-
-    let numericDict = '123';
-
-    let specialDict = '~!@#';
-
-
-
-    let passwordDict = '';
-
-
-
-    if (special === 'yes') {
-
-        passwordDict += specialDict;
-
-    }
-
-
-
-    if (numeric === 'yes') {
-
-        passwordDict += numericDict;
-
-    }
-
-
-
-    if (lower === 'yes') {
-
-        passwordDict += lowerDict;
-
-    }
-
-
-
-    if (upper === 'yes') {
-
-        passwordDict += upperDict;
-
-    }
-
-
-
-    let password = '';
-
-
-
-    for (let i = 0; i < length; i++) {
-
-        let index = getRandomInt(passwordDict.length);
-
-        password += passwordDict[index];
-
-    }
-
-
-
-    return password;
-
-}
-
-
-
-// Write password to the #password input
-
-function writePassword() {
-
-    var password = generatePassword();
-
-    var passwordText = document.querySelector("#password");
-
-    passwordText.value = password;
-
-}
-
-
-
-// Add event listener to generate button
-
-generateBtn.addEventListener("click", writePassword);
