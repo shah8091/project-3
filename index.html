@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Generate password </title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Generate Password</h1>
+        <h3 class="display-pass">Password</h3>
+        <form class="form">
+            <level for="characterAmountNumbers">Amount of numbers</level>
+            <div><input type="range" min="8" max="128" id="characterAmountrange" value="8">
+                <input class="numbers12" type="numbers" min="8" max="128" id=" characterAmountNumbers" value="8"> </div>
+
+
+            <level for="uppercase">include UpperCase</level>
+            <input type="checkbox" id="uppercase">
+            <level for="Numbers">include Numbers</level>
+            <input type="checkbox" id="Numbers">
+            <level for="lowercase"> include lowercase</level>
+            <input type="checkbox" id="lowercase">
+            <level for="special cahracters"> include special characters</level>
+            <input type="checkbox" id="special characters">
+
+            <div clas="btn">
+                <a href="#" class="btn btn-primary btn-lg disabled" tabindex="-1" role="button"
+                    aria-disabled="true">Generate
+                    password</a>
+            </div>
+
+
+
+        </form>
+
+
+    </div>
+</body>
+
+</html>
