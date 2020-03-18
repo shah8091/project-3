@@ -13,10 +13,12 @@
     <div class="container">
         <h1>Generate Password</h1>
         <h3 class="display-pass">Password</h3>
-        <form class="form">
-            <level for="characterAmountNumbers">Amount of numbers</level>
-            <div><input type="range" min="8" max="128" id="characterAmountrange" value="8">
-                <input class="numbers12" type="numbers" min="8" max="128" id=" characterAmountNumbers" value="8"> </div>
+        <form id="passwordgeneratorForm" class="form">
+            <level for="characterAmountNumber">Amount of Characters</level>
+            <div>
+                <input type="range" min="1" max="128" id="characterAmountrange" value="10">
+                <input class="numbers12" type="numbers" min="1" max="128" id=" characterAmountNumber" value="10">
+            </div>
 
 
             <level for="uppercase">include UpperCase</level>
@@ -25,8 +27,8 @@
             <input type="checkbox" id="Numbers">
             <level for="lowercase"> include lowercase</level>
             <input type="checkbox" id="lowercase">
-            <level for="special cahracters"> include special characters</level>
-            <input type="checkbox" id="special characters">
+            <level for="specialcharacters"> include special characters</level>
+            <input type="checkbox" id="specialcharacters">
 
             <div clas="btn">
                 <a href="#" class="btn btn-primary btn-lg disabled" tabindex="-1" role="button"
